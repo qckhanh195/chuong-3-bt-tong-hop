@@ -324,7 +324,6 @@ def handle_error(error):
         404: "Không tìm thấy",
         405: "Phương thức không được hỗ trợ"
     }
-    # Flask error handlers receive an HTTPException which has `code`, `name`, `description`
     code = getattr(error, "code", 500)
     title = titles.get(code, getattr(error, "name", "Lỗi máy chủ"))
     description = getattr(error, "description", "")
